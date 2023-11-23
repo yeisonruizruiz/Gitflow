@@ -1,0 +1,109 @@
+Operaciones MAIN
+
+Crear rama main
+
+git branch main
+git checkout main
+git push -u origin main
+
+Crear rama develop
+
+git checkout -b develop
+git push -u origin develop
+
+Crear dos ramas de tipo feature
+
+# Feature 1
+git checkout -b feature/nueva-funcionalidad-1
+git push -u origin feature/nueva-funcionalidad-1
+
+# Feature 2
+git checkout -b feature/nueva-funcionalidad-2
+git push -u origin feature/nueva-funcionalidad-2
+
+Crear tres ramas de tipo hotfix
+
+# Hotfix 1
+git checkout -b hotfix/correccion-1
+git push -u origin hotfix/correccion-1
+
+# Hotfix 2
+git checkout -b hotfix/correccion-2
+git push -u origin hotfix/correccion-2
+
+# Hotfix 3
+git checkout -b hotfix/correccion-3
+git push -u origin hotfix/correccion-3
+
+Crear y cambiar a la primera rama de tipo feature
+
+git checkout -b feature/nueva-funcionalidad-1
+
+Realizar cambios y commits en la primera rama de tipo feature
+
+# Realizar cambios en archivos
+echo "Funcionalidad 1" > archivo-feature-1.txt
+git add archivo-feature-1.txt
+git commit -m "Añadir funcionalidad 1"
+
+Cambiar a la rama develop
+
+git checkout develop
+
+Mezclar la primera rama feature en develop
+
+git merge feature/nueva-funcionalidad-1
+
+Repetir los pasos 1-4 para la segunda rama de tipo feature:
+
+git checkout -b feature/nueva-funcionalidad-2
+# Realizar cambios y commits en la segunda rama de tipo feature
+git checkout develop
+git merge feature/nueva-funcionalidad-2
+
+Cambiar a la rama main
+
+git checkout main
+
+Mezclar la rama develop en main
+
+git merge develop
+
+
+Crear y cambiar a la primera rama de tipo hotfix
+
+git checkout -b hotfix/correccion-1
+
+Realizar cambios urgentes y commits en la primera rama de tipo hotfix
+
+# Realizar cambios en archivos
+echo "Corrección urgente 1" > archivo-hotfix-1.txt
+git add archivo-hotfix-1.txt
+git commit -m "Corrección urgente 1"
+
+Cambiar a la rama main
+
+git checkout main
+Mezclar la primera rama hotfix en main:
+
+git merge hotfix/correccion-1
+
+Repetir los pasos 1-4 para las dos ramas de tipo hotfix restantes
+
+git checkout -b hotfix/correccion-2
+# Realizar cambios y commits en la segunda rama de tipo hotfix
+git checkout main
+git merge hotfix/correccion-2
+
+git checkout -b hotfix/correccion-3
+# Realizar cambios y commits en la tercera rama de tipo hotfix
+git checkout main
+git merge hotfix/correccion-3
+
+Cambiar a la rama develop
+
+git checkout develop
+
+Mezclar los cambios de main en develop
+
+git merge main
